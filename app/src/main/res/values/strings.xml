@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">ChallengeRunning</string>
     <string name="title_activity_home">Map</string>
+    <string name="Distance">Distance</string>
+    <string name="Steps">Steps</string>
+    <string name="Duration">Duration</string>
+    <string name="Speed">Speed</string>
+    <string name="title_activity_statistics">Map</string>
 </resources>

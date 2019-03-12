@@ -19,15 +19,24 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
         <activity
-            android:name=".HomeActivity"
-            android:label="Map"
-        >
+            android:name=".StatisticsActivity"
+            android:label="Add New Friend">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--<activity-->
+            <!--android:name=".HomeActivity"-->
+            <!--android:label="Friends" />-->
+        <!--<activity android:name=".AddFriendActivity" />-->
+        <activity android:name=".NewChallengeActivity" />
+        <!--<activity-->
+            <!--android:name=".AddFriendActivity"-->
+            <!--android:label="@string/title_activity_statistics"></activity>-->
     </application>
 
 </manifest>
