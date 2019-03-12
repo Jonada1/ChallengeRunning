@@ -22,21 +22,25 @@
 
         <activity
             android:name=".StatisticsActivity"
-            android:label="Add New Friend">
+            android:label="Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity-->
-            <!--android:name=".HomeActivity"-->
-            <!--android:label="Friends" />-->
-        <!--<activity android:name=".AddFriendActivity" />-->
-        <activity android:name=".NewChallengeActivity" />
-        <!--<activity-->
-            <!--android:name=".AddFriendActivity"-->
-            <!--android:label="@string/title_activity_statistics"></activity>-->
+        <activity
+            android:name=".NewChallengeActivity" />
+         <activity
+             android:name=".FriendsActivity"
+             android:label="Friends" />
+         <activity
+             android:name=".AddFriendActivity" />
+        <activity
+            android:name=".LeaderbordActivity"/>
+        <activity
+            android:name=".WinnerActivity"/>
+        <activity android:name=".HomeActivity"/>
     </application>
 
 </manifest>
