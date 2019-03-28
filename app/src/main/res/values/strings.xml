@@ -6,4 +6,17 @@
     <string name="Duration">Duration</string>
     <string name="Speed">Speed</string>
     <string name="title_activity_statistics">Map</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="not_registered">not_registered</string>
+    <string name="register">register</string>
+    <string name="confirm_password">confirm_password</string>
+    <string name="email">email</string>
+    <string name="already_registered">already_registered</string>
+    <string name="back_to_login">back_to_login</string>
+    <string name="nav_header_desc">nav_header_desc</string>
+    <string name="action_settings">action_settings</string>
+    <string name="navigation_drawer_open">Drawer Open</string>
+    <string name="navigation_drawer_close">Drawer Closed</string>
 </resources>

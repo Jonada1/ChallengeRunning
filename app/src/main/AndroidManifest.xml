@@ -21,7 +21,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".StatisticsActivity"
+            android:name=".HomeActivity"
             android:label="Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +40,7 @@
             android:name=".LeaderbordActivity"/>
         <activity
             android:name=".WinnerActivity"/>
-        <activity android:name=".HomeActivity"/>
+        <activity android:name=".LoginActivity"/>
     </application>
 
 </manifest>
