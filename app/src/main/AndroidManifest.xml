@@ -21,7 +21,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".HomeActivity"
+            android:name=".FriendsActivity"
             android:label="Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +32,7 @@
         <activity
             android:name=".NewChallengeActivity" />
          <activity
-             android:name=".FriendsActivity"
+             android:name=".HomeActivity"
              android:label="Friends" />
          <activity
              android:name=".AddFriendActivity" />

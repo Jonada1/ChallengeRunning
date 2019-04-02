@@ -8,31 +8,27 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.widget.Toast;
+import android.view.View;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 
-//
 
 public class HomeActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     LocationManager locationManager;
     LocationListener locationListener;
-
+    FloatingActionButton NewChallengeView;
     public void centreMapOnLocation(Location location, String title){
 
         LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
@@ -65,6 +61,9 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        NewChallengeView = (FloatingActionButton)findViewById(R.id.startNewChallenge);
+        startChallenge(NewChallengeView);
     }
 
 
@@ -112,5 +111,15 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+
+    public void startChallenge(View view) {
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent NewChallengeIntent = new Intent(HomeActivity.this, NewChallengeActivity.class);
+                startActivity(NewChallengeIntent);
+            }
+        });
+    }
 
 }

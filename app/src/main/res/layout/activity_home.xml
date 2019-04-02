@@ -159,11 +159,12 @@
 
             <android.support.design.widget.FloatingActionButton
                 android:layout_width="wrap_content"
-
+                android:id="@+id/startNewChallenge"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/play" />
+                android:src="@drawable/ic_menu_share"
+                android:onClick="startChallenge"/>
 
         </LinearLayout>
     </LinearLayout>
