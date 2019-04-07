@@ -8,6 +8,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
@@ -23,17 +24,15 @@
         android:layout_toEndOf="@id/imageView"
         android:layout_toRightOf="@id/imageView"
         android:gravity="center_vertical"
+
         android:textSize="16sp"/>
 
     <ImageView
         android:id="@+id/delFriend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/textView"
         android:contentDescription="Icon" />
 
 </RelativeLayout>

@@ -1,9 +1,12 @@
 package com.example.jonada.challengerunning;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 public class FriendsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -25,18 +28,9 @@ public class FriendsActivity extends AppCompatActivity {
 //        recyclerView.setLayoutManager(layoutManager);
 
         FriendsData[] myListData = new FriendsData[] {
-                new FriendsData("Jonada Ferracaku", android.R.drawable.ic_dialog_dialer, android.R.drawable.ic_delete),
-                new FriendsData("Info", android.R.drawable.ic_dialog_info, android.R.drawable.ic_delete),
-                new FriendsData("Delete", android.R.drawable.ic_delete, android.R.drawable.ic_delete),
-                new FriendsData("Dialer", android.R.drawable.ic_dialog_dialer, android.R.drawable.ic_delete),
-                new FriendsData("Alert", android.R.drawable.ic_dialog_alert, android.R.drawable.ic_delete),
-                new FriendsData("Map", android.R.drawable.ic_dialog_map, android.R.drawable.ic_delete),
-                new FriendsData("Email", android.R.drawable.ic_dialog_email, android.R.drawable.ic_delete),
-                new FriendsData("Info", android.R.drawable.ic_dialog_info, android.R.drawable.ic_delete),
-                new FriendsData("Delete", android.R.drawable.ic_delete, android.R.drawable.ic_delete),
-                new FriendsData("Dialer", android.R.drawable.ic_dialog_dialer, android.R.drawable.ic_delete),
-                new FriendsData("Alert", android.R.drawable.ic_dialog_alert, android.R.drawable.ic_delete),
-                new FriendsData("Map", android.R.drawable.ic_dialog_map, android.R.drawable.ic_delete),
+                new FriendsData("Jonada Ferracaku", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),
+                new FriendsData("Nejdi Kroi", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),
+                new FriendsData("Mobile Computing", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),
         };
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.friends_view);
@@ -44,5 +38,14 @@ public class FriendsActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.text_view_add_friend);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent AddFriendIntent = new Intent(FriendsActivity.this, AddFriendActivity.class);
+                startActivity(AddFriendIntent);
+            }
+        });
     }
 }

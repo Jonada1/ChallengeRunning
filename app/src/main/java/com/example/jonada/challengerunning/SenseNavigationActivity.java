@@ -9,28 +9,24 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.LinearLayout;
 
 public class SenseNavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private int currentChosenNavMenu = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sense);
+        changeMainView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -79,19 +75,32 @@ public class SenseNavigationActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        if (id != this.currentChosenNavMenu) {
+            closeTheDrawer();
+        }
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            changeMainView(R.layout.activity_new_challenge);
         } else if (id == R.id.nav_gallery) {
-
+            changeMainView(R.layout.activity_friends);
         } else if (id == R.id.nav_slideshow) {
-
+            changeMainView(R.layout.activity_add_friend);
         } else if (id == R.id.nav_manage) {
-
+            changeMainView(R.layout.activity_leaderbord);
         }
 
+        closeTheDrawer();
+
+        return true;
+    }
+    private void closeTheDrawer() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+    }
+    private void changeMainView(int layout){
+        final LinearLayout viewGroup = (LinearLayout)findViewById(R.id.content_view);
+        LayoutInflater li = LayoutInflater.from(this);
+        viewGroup.removeAllViews();
+        View view = li.inflate(layout, null, false);
+        viewGroup.addView(view);
     }
 }

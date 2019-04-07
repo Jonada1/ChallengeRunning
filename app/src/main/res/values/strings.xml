@@ -6,10 +6,10 @@
     <string name="Duration">Duration</string>
     <string name="Speed">Speed</string>
     <string name="title_activity_statistics">Map</string>
-    <string name="username">username</string>
-    <string name="password">password</string>
-    <string name="login">login</string>
-    <string name="not_registered">not_registered</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="not_registered">Not Registered?</string>
     <string name="register">register</string>
     <string name="confirm_password">confirm_password</string>
     <string name="email">email</string>
@@ -19,4 +19,20 @@
     <string name="action_settings">action_settings</string>
     <string name="navigation_drawer_open">Drawer Open</string>
     <string name="navigation_drawer_close">Drawer Closed</string>
+    <string name="Register">Register</string>
+    <string name="Login">Login</string>
+    <string name="Password">Password</string>
+
+    <string-array name="friends">
+        <item></item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
 </resources>

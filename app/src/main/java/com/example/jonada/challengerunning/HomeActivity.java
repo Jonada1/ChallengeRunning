@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -29,15 +30,13 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
     LocationManager locationManager;
     LocationListener locationListener;
     FloatingActionButton NewChallengeView;
-    public void centreMapOnLocation(Location location, String title){
+    public void centreMapOnLocation(Location location, String title) {
 
-        LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
+        LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
         mMap.clear();
         mMap.addMarker(new MarkerOptions().position(userLocation).title(title));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,12));
-
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 12));
     }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -62,8 +61,14 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        NewChallengeView = (FloatingActionButton)findViewById(R.id.startNewChallenge);
-        startChallenge(NewChallengeView);
+        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.startNewChallenge);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent NewChallengeIntent = new Intent(HomeActivity.this, NewChallengeActivity.class);
+                startActivity(NewChallengeIntent);
+            }
+        });
     }
 
 
@@ -109,17 +114,6 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
 
-    }
-
-
-    public void startChallenge(View view) {
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent NewChallengeIntent = new Intent(HomeActivity.this, NewChallengeActivity.class);
-                startActivity(NewChallengeIntent);
-            }
-        });
     }
 
 }

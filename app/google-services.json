@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "318838276419",
+    "firebase_url": "https://challenge-running.firebaseio.com",
+    "project_id": "challenge-running",
+    "storage_bucket": "challenge-running.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318838276419:android:aafc6fa41da6a402",
+        "android_client_info": {
+          "package_name": "com.example.jonada.challengerunning"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6gq6uzu12goE8uQ1SlW9_aVbhpoM4jpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318838276419-l407a4i9j4dq3186d376vruldp211mi1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

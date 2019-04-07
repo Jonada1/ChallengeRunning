@@ -27,11 +27,19 @@ public class LoginActivity extends AppCompatActivity {
         mTextViewRegister = (TextView)findViewById(R.id.text_register);
 
 
+        mButtonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(homeIntent);
+            }
+        });
         mTextViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
-                startActivity(registerIntent);
+//                Intent registerIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
+//                startActivity(registerIntent);
+                setContentView(R.layout.activity_home);
             }
         });
 }}

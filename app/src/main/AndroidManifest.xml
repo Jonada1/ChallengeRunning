@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jonada.challengerunning">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -15,32 +14,32 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".RunSessionActivity"></activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".FriendsActivity"
-            android:label="Home">
+            android:name=".RegistrationActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".NewChallengeActivity" />
-         <activity
-             android:name=".HomeActivity"
-             android:label="Friends" />
-         <activity
-             android:name=".AddFriendActivity" />
-        <activity
-            android:name=".LeaderbordActivity"/>
-        <activity
-            android:name=".WinnerActivity"/>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".NewChallengeActivity"
+            android:label="This is the Hello World Application"
+            />
+        <activity android:name=".AddFriendActivity"
+            android:label="This is the Hello World Application"/>
+        <activity android:name=".LeaderbordActivity"
+            android:label="This is the Hello World Application"/>
+        <activity android:name=".WinnerActivity"
+            android:label="This is the Hello World Application"/>
+        <!--<activity android:name=".SenseNavigationActivity" />-->
     </application>
 
 </manifest>
