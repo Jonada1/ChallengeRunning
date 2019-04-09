@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -34,12 +35,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(homeIntent);
             }
         });
+
+
         mTextViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent registerIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
-//                startActivity(registerIntent);
-                setContentView(R.layout.activity_home);
+                Intent registerIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(registerIntent);
             }
         });
 }}

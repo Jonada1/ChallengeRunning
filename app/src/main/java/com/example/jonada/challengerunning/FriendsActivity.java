@@ -17,15 +17,6 @@ public class FriendsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
-//        recyclerView = (RecyclerView) findViewById(R.id.friends_view);
-//
-//        // use this setting to improve performance if you know that changes
-//        // in content do not change the layout size of the RecyclerView
-//        recyclerView.setHasFixedSize(true);
-//
-//        // use a linear layout manager
-//        layoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(layoutManager);
 
         FriendsData[] myListData = new FriendsData[] {
                 new FriendsData("Jonada Ferracaku", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),

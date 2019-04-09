@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!--MAP-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="300dp">
@@ -26,21 +31,21 @@
 
 
         <LinearLayout
-            android:id="@+id/validity"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
+            android:layout_weight="0"
             android:background="@android:color/white"
-            android:gravity="top"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <LinearLayout
-                android:id="@+id/validity2"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:background="@android:color/white"
-                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
                 android:orientation="vertical">
 
                 <TextView
@@ -61,12 +66,76 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/validity3"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="bottom"
-                android:background="@android:color/white"
-                android:gravity="right"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:orientation="vertical"
+                android:paddingLeft="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="top|end"
+                    android:text="@string/Steps" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="40dp"
+                    android:gravity="top|end"
+                    android:text="0" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_weight="0"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="start"
+                    android:text="@string/Duration" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="start"
+                    android:text="00:00:00" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
                 android:orientation="vertical">
 
                 <TextView
@@ -88,85 +157,33 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/validity1"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_gravity="bottom"
-            android:background="@android:color/white"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:id="@+id/validity5"
-                android:layout_width="wrap_content"
+            <!--<android.support.design.widget.FloatingActionButton-->
+            <!--android:id="@+id/startNewChallenge"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--android:onClick="startChallenge"-->
+            <!--android:src="@drawable/ic_menu_share" />-->
+
+            <Button
+                android:id="@+id/button_start_challenge"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="10dp"
-                android:background="@android:color/white"
-                android:gravity="top|left"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|start"
-                    android:layout_marginLeft="40px"
-                    android:text="@string/Distance" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|start"
-                    android:layout_marginLeft="40px"
-                    android:text="0.0" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="190dp"
-                android:layout_marginTop="40dp"
-                android:background="@android:color/white"
-                android:gravity="right"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginRight="80dp"
-                    android:gravity="top|end"
-                    android:text="@string/Speed" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginRight="100dp"
-                    android:gravity="top|end"
-                    android:text="0" />
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="bottom|right"
-            android:orientation="horizontal">
-
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/startNewChallenge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginRight="20dp"
-                android:onClick="startChallenge"
-                android:src="@drawable/ic_menu_share" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="#F82E72"
+                android:text="Start Challenge"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
 
         </LinearLayout>
     </LinearLayout>
 
-</FrameLayout>
+</RelativeLayout>
+

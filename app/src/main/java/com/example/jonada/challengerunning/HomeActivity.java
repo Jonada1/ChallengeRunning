@@ -15,6 +15,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -61,7 +62,7 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.startNewChallenge);
+        Button fab = (Button)findViewById(R.id.button_start_challenge);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
