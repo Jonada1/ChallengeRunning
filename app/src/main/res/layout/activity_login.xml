@@ -5,77 +5,108 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <!--<ImageView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:adjustViewBounds="false"-->
-    <!--android:alpha="0.4"-->
-    <!--android:scaleType="centerCrop"-->
-    <!--android:background="@drawable/img_background"-->
-    <!--android:cropToPadding="false" />-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="false"
+        android:alpha="0.4"
+        android:scaleType="centerCrop"
+        android:background="@drawable/img_background"
+        android:cropToPadding="false" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerInParent="true"
         android:orientation="vertical">
 
 
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="127dp"
-                android:layout_marginTop="50dp"
-
-                android:layout_weight="1"
-                app:srcCompat="@drawable/running" />
-
-
-        <!-- Username Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/NametextView"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:textColor="@color/colorAccent"
+            android:text="@string/username"/>
 
-            <EditText
-                android:id="@+id/edittext_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:drawableRight="@drawable/baseline_person_black_24dp"
-                android:hint="@string/username"
-                android:inputType="text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-        </android.support.design.widget.TextInputLayout>
-
-        <!-- Password Label -->
-        <android.support.design.widget.TextInputLayout
+        <EditText
+            android:id="@+id/edittext_username"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textSize="17dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/edit_text_shape_login"
+            android:hint="@string/username"
+            android:inputType="text" />
 
-            <EditText
-                android:id="@+id/edittext_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
-                android:drawableRight="@drawable/baseline_lock_black_24dp"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                android:textColor="#ffffff"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-        </android.support.design.widget.TextInputLayout>
+        <TextView
+            android:id="@+id/edittext_passwordtext"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:text="@string/password"/>
+
+        <EditText
+            android:id="@+id/edittext_password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textSize="17dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/edit_text_shape_login"
+            android:hint="@string/password"
+            android:inputType="numberPassword" />
+
+
+        <!--&lt;!&ndash; Username Label &ndash;&gt;-->
+        <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp">-->
+<!--&lt;!&ndash;   &ndash;&gt;-->
+            <!--<EditText-->
+                <!--android:id="@+id/edittext_username"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:drawableRight="@drawable/baseline_person_black_24dp"-->
+                <!--android:hint="@string/username"-->
+                <!--android:inputType="text"-->
+                <!--android:textAppearance="@style/TextAppearance.AppCompat.Medium" />-->
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--&lt;!&ndash; Password Label &ndash;&gt;-->
+        <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp">-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/edittext_password"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:drawableRight="@drawable/baseline_lock_black_24dp"-->
+                <!--android:hint="@string/password"-->
+                <!--android:inputType="textPassword"-->
+                <!--android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>-->
+        <!--</android.support.design.widget.TextInputLayout>-->
 
         <Button
             android:id="@+id/button_login"
