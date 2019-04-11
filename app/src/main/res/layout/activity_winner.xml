@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -40,4 +40,4 @@
             android:text="Ok"
             tools:layout_editor_absoluteX="174dp"
             tools:layout_editor_absoluteY="198dp" />
-    </LinearLayout></androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout></android.support.constraint.ConstraintLayout>
