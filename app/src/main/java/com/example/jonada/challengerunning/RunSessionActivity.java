@@ -1,12 +1,10 @@
 package com.example.jonada.challengerunning;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.sql.Time;
 
 public class RunSessionActivity extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
