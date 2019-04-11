@@ -1,6 +1,6 @@
 package com.example.jonada.challengerunning;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class LeaderbordActivity extends AppCompatActivity {

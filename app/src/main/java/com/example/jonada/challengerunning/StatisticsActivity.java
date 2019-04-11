@@ -1,5 +1,6 @@
 package com.example.jonada.challengerunning;
 
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -9,9 +10,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class StatisticsActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class StatisticsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 

@@ -7,26 +7,25 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.jonada.challengerunning.utils.NetworkConnection;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 
-public class HomeActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class HomeActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     LocationManager locationManager;
@@ -34,22 +33,10 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
     FloatingActionButton NewChallengeView;
     public void centreMapOnLocation(Location location, String title) {
 
-        if(NetworkConnection.isNetworkAvailable(this)==true)
-        {
-            if(location != null)
-            {
-                LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
-                mMap.clear();
-                mMap.addMarker(new MarkerOptions().position(userLocation).title(title));
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 12));
-            }
-        }
-        else
-        {
-            NetworkConnection.InternetConnectionOffMessage(this);
-        }
-
-
+        LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
+        mMap.clear();
+        mMap.addMarker(new MarkerOptions().position(userLocation).title(title));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 12));
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
