@@ -14,7 +14,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-        <activity android:name=".RunSessionActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -32,14 +31,20 @@
         <activity android:name=".HomeActivity"
             android:theme="@style/AppTheme.AppBarOverlay"
             android:label="Test"/>
-        <activity android:name=".NewChallengeActivity" />
-        <activity android:name=".AddFriendActivity"/>
-        <activity android:name=".FriendsActivity"/>
-        <activity android:name=".LeaderbordActivity"/>
-        <activity android:name=".WinnerActivity"/>
-        <activity android:name=".RegistrationActivity"/>
-
-
+        <activity android:name=".NewChallengeActivity"
+            android:theme="@style/AppTheme.AppBarOverlay"/>
+        <activity android:name=".AddFriendActivity"
+            android:theme="@style/AppTheme.AppBarOverlay"/>
+        <activity android:name=".FriendsActivity"
+            android:theme="@style/AppTheme.AppBarOverlay"/>
+        <activity android:name=".LeaderbordActivity"
+            android:theme="@style/AppTheme.AppBarOverlay"/>
+        <activity android:name=".WinnerActivity"
+            android:theme="@style/AppTheme.AppBarOverlay"/>
+        <activity android:name=".RegistrationActivity"
+            android:theme="@style/AppTheme.AppBarOverlay"/>
+        <activity android:name=".RunSessionActivity"
+            android:theme="@style/AppTheme.AppBarOverlay" />
     </application>
 
 </manifest>
