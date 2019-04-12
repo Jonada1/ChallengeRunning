@@ -73,8 +73,7 @@
                 android:drawableRight="@drawable/baseline_lock_black_24dp"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:textColor="#ffffff"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </android.support.design.widget.TextInputLayout>
 
         <Button

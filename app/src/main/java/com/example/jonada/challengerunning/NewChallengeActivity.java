@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class NewChallengeActivity extends AppCompatActivity {
@@ -28,8 +30,9 @@ public class NewChallengeActivity extends AppCompatActivity {
 
 
     public void startChallenge(View view) {
+        EditText durationTime = (EditText) findViewById(R.id.editText_duration);
         Intent runningSessionIntent = new Intent(this, RunSessionActivity.class );
-        runningSessionIntent.putExtra("time", 50);
+        runningSessionIntent.putExtra("time", Integer.parseInt(durationTime.getText().toString()) * 60);
         startActivity(runningSessionIntent);
     }
 }
