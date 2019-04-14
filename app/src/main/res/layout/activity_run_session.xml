@@ -27,6 +27,20 @@
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="300dp"-->
                 <!--tools:context=".RunSessionActivity" />-->
+            <!--MAP-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:map="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/map_running"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    tools:context=".RunSessionActivity" />
+            </LinearLayout>
         </LinearLayout>
 
         <!-- Duration and steps -->
@@ -52,12 +66,12 @@
 
                 <ImageView
                     android:id="@+id/imageView_clock"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:adjustViewBounds="false"
-                    android:src="@drawable/baseline_access_time_black_36dp" />
+                    android:src="@drawable/baseline_access_time_black_24" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -96,9 +110,10 @@
                 <ImageView
                     android:id="@+id/imageView6"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
                     android:layout_weight="1"
-                    android:src="@android:drawable/btn_dialog" />
+                    android:src="@drawable/baseline_directions_run_black_24" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -108,6 +123,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/steps"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -149,9 +165,10 @@
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
                     android:layout_weight="1"
-                    android:src="@android:drawable/btn_dialog" />
+                    android:src="@drawable/baseline_person_pin_circle_black_24" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -188,11 +205,11 @@
 
                 <ImageView
                     android:id="@+id/imageView_shutter_speed"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:src="@drawable/baseline_shutter_speed_black_24dp" />
+                    android:src="@drawable/baseline_shutter_speed_black_24" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -239,7 +256,7 @@
             <!--android:src="@drawable/ic_menu_share" />-->
 
             <Button
-                android:id="@+id/button_start_challenge"
+                android:id="@+id/bt_start_pause"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/baseline_pause_circle_outline_black_24dp"

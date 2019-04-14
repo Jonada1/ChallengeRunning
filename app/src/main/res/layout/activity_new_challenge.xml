@@ -12,43 +12,53 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:gravity="center"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="start"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Select Friend"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="48dp" />
+        <!--<TextView-->
+        <!--android:id="@+id/textView_selectFriend"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:text="Select Friend"-->
+        <!--tools:layout_editor_absoluteX="8dp"-->
+        <!--tools:layout_editor_absoluteY="48dp" />-->
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-5dp"
+            android:dropDownWidth="match_parent"
+            android:spinnerMode="dropdown" />
 
         <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView_setDuration"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Set duration"
+            android:text="Set duration (min)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="179dp" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="left"
             android:gravity="center"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="216dp">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/editText_duration"
-                android:layout_width="194dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="datetime" />
         </android.support.design.widget.TextInputLayout>

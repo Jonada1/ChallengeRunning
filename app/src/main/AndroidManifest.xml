@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jonada.challengerunning">
+
+    <uses-feature android:name="android.hardware.sensor.stepcounter" />
+    <uses-feature android:name="android.hardware.sensor.stepdetector" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -21,7 +24,8 @@
 
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:label="My Friends">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,11 +36,14 @@
             android:theme="@style/AppTheme.AppBarOverlay"
             android:label="Test"/>
         <activity android:name=".NewChallengeActivity"
-            android:theme="@style/AppTheme.AppBarOverlay"/>
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:label="New Challenge"/>
         <activity android:name=".AddFriendActivity"
-            android:theme="@style/AppTheme.AppBarOverlay"/>
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:label="Add Friend"/>
         <activity android:name=".FriendsActivity"
-            android:theme="@style/AppTheme.AppBarOverlay"/>
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:label="My Friends"/>
         <activity android:name=".LeaderbordActivity"
             android:theme="@style/AppTheme.AppBarOverlay"/>
         <activity android:name=".WinnerActivity"
