@@ -256,14 +256,15 @@
             <!--android:src="@drawable/ic_menu_share" />-->
 
             <Button
-                android:id="@+id/bt_start_pause"
+                android:id="@+id/bt_pause"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/baseline_pause_circle_outline_black_24dp"
-                android:onClick="onToggle" />
+                android:onClick="onToggle"
+                 />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_stop"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/baseline_stop_black_24dp"
