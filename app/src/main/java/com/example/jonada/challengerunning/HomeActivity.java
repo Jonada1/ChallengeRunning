@@ -13,20 +13,24 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.util.AttributeSet;
+import android.view.InflateException;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-
-public class HomeActivity extends FragmentActivity implements OnMapReadyCallback {
-
+public class HomeActivity extends SenseNavigationActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     LocationManager locationManager;
     LocationListener locationListener;
@@ -37,6 +41,16 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.clear();
         mMap.addMarker(new MarkerOptions().position(userLocation).title(title));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 12));
+    }
+    private void createMap() {
+        SupportMapFragment mMapFragment = SupportMapFragment.newInstance();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager()
+                .beginTransaction();
+        fragmentTransaction.add(R.id.map_container, mMapFragment);
+        fragmentTransaction.commit();
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        mMapFragment.getMapAsync(this);
+
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -57,11 +71,7 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-
+        this.createMap();
         Button fab = (Button)findViewById(R.id.button_start_challenge);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,8 +81,14 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
     }
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MapFragment f = (MapFragment) getFragmentManager()
+                .findFragmentById(R.id.map);
+        if (f != null)
+            getFragmentManager().beginTransaction().remove(f).commit();
+    }
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -113,8 +129,6 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
                 ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
             }
         }
-
-
     }
 
 }

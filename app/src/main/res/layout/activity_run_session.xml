@@ -256,6 +256,14 @@
             <!--android:src="@drawable/ic_menu_share" />-->
 
             <Button
+                android:id="@+id/bt_play"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/baseline_play_circle_outline_black_24"
+                android:onClick="onToggle"
+                />
+
+            <Button
                 android:id="@+id/bt_pause"
                 android:layout_width="50dp"
                 android:layout_height="50dp"

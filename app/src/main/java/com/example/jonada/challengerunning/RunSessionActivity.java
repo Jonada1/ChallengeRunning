@@ -43,7 +43,9 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
     private boolean timerPaused;
     final Timer timer = new Timer();
     int totalDuration;
-    Button bt_start_pause;
+    Button bt_pause;
+    Button bt_play;
+
     TextView steps;
     SensorManager sensorManager;
     Sensor mSensor;
@@ -79,8 +81,16 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_run_session);
 
-
-
+            bt_pause = (Button) findViewById(R.id.bt_pause);
+            bt_play = (Button) findViewById(R.id.bt_play);
+            bt_pause.setVisibility(View.VISIBLE);
+            bt_pause.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    bt_pause.setVisibility(View.GONE);
+                    bt_play.setVisibility(View.VISIBLE);
+                }
+            });
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
