@@ -1,11 +1,11 @@
 package com.example.jonada.challengerunning;
 
-public class FriendsData {
+public class FriendData {
     private String name;
     private int imgId;
     private int delete;
 
-    public FriendsData(String description, int imgId, int delete) {
+    public FriendData(String description, int imgId, int delete) {
         this.name = description;
         this.imgId = imgId;
         this.delete = delete;

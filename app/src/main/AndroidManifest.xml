@@ -15,7 +15,9 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".CompletedChallengesActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -33,30 +35,21 @@
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:label="Test"
-            android:theme="@style/AppTheme.PopupOverlay" />
+            android:label="Challenge Running" />
         <activity
             android:name=".NewChallengeActivity"
-            android:label="New Challenge"
-            android:theme="@style/AppTheme.AppBarOverlay" />
+            android:label="New Challenge" />
         <activity
             android:name=".AddFriendActivity"
-            android:label="Add Friend"
-            android:theme="@style/AppTheme.AppBarOverlay" />
+            android:label="Add Friend" />
         <activity
             android:name=".FriendsActivity"
-            android:label="My Friends"
-            android:theme="@style/AppTheme.AppBarOverlay" />
+            android:label="My Friends" />
         <activity
             android:name=".LeaderbordActivity"
-            android:label="Leaderboard"
-            android:theme="@style/AppTheme.AppBarOverlay" />
-        <activity
-            android:name=".RegistrationActivity"
-            android:theme="@style/AppTheme.AppBarOverlay" />
-        <activity
-            android:name=".RunSessionActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Leaderboard" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".RunSessionActivity" />
     </application>
 
 </manifest>

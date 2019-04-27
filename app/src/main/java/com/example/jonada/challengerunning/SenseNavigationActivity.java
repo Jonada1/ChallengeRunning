@@ -1,5 +1,6 @@
 package com.example.jonada.challengerunning;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -24,9 +25,7 @@ public class SenseNavigationActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sense);
-        changeMainView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -79,12 +78,17 @@ public class SenseNavigationActivity extends AppCompatActivity
             closeTheDrawer();
         }
         if (id == R.id.nav_camera) {
-            changeMainView(R.layout.activity_new_challenge);
+            Intent newChallengeIntent = new Intent(SenseNavigationActivity.this, NewChallengeActivity.class);
+            startActivity(newChallengeIntent);
         } else if (id == R.id.nav_gallery) {
-            changeMainView(R.layout.activity_friends);
+            Intent friendsIntent = new Intent(SenseNavigationActivity.this, FriendsActivity.class);
+            startActivity(friendsIntent);
         } else if (id == R.id.nav_slideshow) {
-            changeMainView(R.layout.activity_add_friend);
+            Intent newFriendIntent = new Intent(SenseNavigationActivity.this, AddFriendActivity.class);
+            startActivity(newFriendIntent);
         } else if (id == R.id.nav_manage) {
+            Intent leaderBoardIntent = new Intent(SenseNavigationActivity.this, LeaderbordActivity.class);
+            startActivity(leaderBoardIntent);
             changeMainView(R.layout.activity_leaderbord);
         }
 
@@ -96,7 +100,7 @@ public class SenseNavigationActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
     }
-    private void changeMainView(int layout){
+    public void changeMainView(int layout){
         final LinearLayout viewGroup = (LinearLayout)findViewById(R.id.content_view);
         LayoutInflater li = LayoutInflater.from(this);
         viewGroup.removeAllViews();

@@ -35,6 +35,22 @@ public class HomeActivity extends SenseNavigationActivity implements OnMapReadyC
     LocationManager locationManager;
     LocationListener locationListener;
     FloatingActionButton NewChallengeView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        changeMainView(R.layout.activity_home);
+        this.createMap();
+        Button fab = (Button)findViewById(R.id.button_start_challenge);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent NewChallengeIntent = new Intent(HomeActivity.this, NewChallengeActivity.class);
+                startActivity(NewChallengeIntent);
+            }
+        });
+    }
+
     public void centreMapOnLocation(Location location, String title) {
 
         LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
@@ -67,20 +83,6 @@ public class HomeActivity extends SenseNavigationActivity implements OnMapReadyC
         }
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        this.createMap();
-        Button fab = (Button)findViewById(R.id.button_start_challenge);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent NewChallengeIntent = new Intent(HomeActivity.this, NewChallengeActivity.class);
-                startActivity(NewChallengeIntent);
-            }
-        });
-    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

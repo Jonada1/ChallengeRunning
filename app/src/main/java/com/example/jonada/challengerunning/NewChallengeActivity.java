@@ -16,7 +16,7 @@ public class NewChallengeActivity extends SenseNavigationActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_challenge);
+        changeMainView(R.layout.activity_new_challenge);
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout

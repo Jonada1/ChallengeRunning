@@ -10,10 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class FriendsListAdapter  extends RecyclerView.Adapter<FriendsListAdapter.ViewHolder> {
-    private FriendsData[] listdata;
+    private FriendData[] listdata;
 
     // RecyclerView recyclerView;
-    public FriendsListAdapter(FriendsData[] listdata) {
+    public FriendsListAdapter(FriendData[] listdata) {
         this.listdata = listdata;
     }
     @Override
@@ -26,7 +26,7 @@ public class FriendsListAdapter  extends RecyclerView.Adapter<FriendsListAdapter
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final FriendsData myListData = listdata[position];
+        final FriendData myListData = listdata[position];
         holder.textView.setText(listdata[position].getDescription());
         holder.imageView.setImageResource(listdata[position].getImgId());
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {

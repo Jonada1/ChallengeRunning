@@ -9,7 +9,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AddFriendActivity extends AppCompatActivity {
+public class AddFriendActivity extends SenseNavigationActivity {
 
     private static final String[] friends = new String[]{
             "Nejdi", "Jonada", "Ornela", "Friend", "Someone"
@@ -19,7 +19,7 @@ public class AddFriendActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_friend);
+        changeMainView(R.layout.activity_add_friend);
 
         String[] countries = getResources().getStringArray(R.array.friends);
 

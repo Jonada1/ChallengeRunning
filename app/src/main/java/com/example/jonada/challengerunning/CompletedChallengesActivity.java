@@ -3,11 +3,11 @@ package com.example.jonada.challengerunning;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class LeaderbordActivity extends SenseNavigationActivity {
+public class CompletedChallengesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        changeMainView(R.layout.activity_leaderbord);
+        setContentView(R.layout.activity_completed_challenges);
     }
 }

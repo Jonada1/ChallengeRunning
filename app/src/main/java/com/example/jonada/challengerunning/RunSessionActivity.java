@@ -11,11 +11,11 @@ import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,6 +45,9 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
     int totalDuration;
     Button bt_pause;
     Button bt_play;
+    Button bt_finish;
+    Button bt_stop;
+
 
     TextView steps;
     SensorManager sensorManager;
@@ -75,7 +78,7 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        timePassed = 0;
+        timePassed = 55;
         timerPaused = false;
 
         super.onCreate(savedInstanceState);
@@ -83,14 +86,11 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
 
             bt_pause = (Button) findViewById(R.id.bt_pause);
             bt_play = (Button) findViewById(R.id.bt_play);
+            bt_finish = (Button) findViewById(R.id.btn_finish);
+            bt_stop = (Button) findViewById(R.id.btn_stop);
             bt_pause.setVisibility(View.VISIBLE);
-            bt_pause.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    bt_pause.setVisibility(View.GONE);
-                    bt_play.setVisibility(View.VISIBLE);
-                }
-            });
+            bt_play.setVisibility(View.GONE);
+            bt_finish.setVisibility(View.GONE);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -115,6 +115,7 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
         Bundle extras = getIntent().getExtras();
         totalDuration = extras != null ? (int) extras.get("time"): 0;
         final TextView duration = (TextView) findViewById(R.id.textView_timer);
+        final Handler handler = new Handler();
         timer.scheduleAtFixedRate(new TimerTask(){
             @Override
             public void run(){
@@ -123,15 +124,33 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
                     duration.setText(convertToMinuteSeconds(totalDuration - timePassed));
                 }
                 if((timePassed  >= totalDuration)) {
-                    timer.cancel();
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            bt_finish.setVisibility(bt_finish.VISIBLE);
+                            bt_pause.setVisibility(bt_pause.GONE);
+                            bt_stop.setVisibility(bt_stop.GONE);
+                        }
+                    });
 
+                    timer.cancel();
                 }
             }
         },0,1000);
+
+
     }
     public void onToggle(View view) {
         timerPaused = !timerPaused;
+        bt_pause.setVisibility(bt_pause.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+        bt_play.setVisibility(bt_play.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
     }
+
+    public  void onFinish(View view){
+        Intent NewChallengeIntent = new Intent(RunSessionActivity.this, CompletedChallengesActivity.class);
+        startActivity(NewChallengeIntent);
+    }
+
     public void resetTimer(View view) {
         timePassed = 0;
         timerPaused = true;
