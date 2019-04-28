@@ -20,12 +20,13 @@ import android.widget.LinearLayout;
 
 public class SenseNavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    Toolbar toolbar;
     private int currentChosenNavMenu = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sense);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -77,19 +78,24 @@ public class SenseNavigationActivity extends AppCompatActivity
         if (id != this.currentChosenNavMenu) {
             closeTheDrawer();
         }
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_start_challenge) {
             Intent newChallengeIntent = new Intent(SenseNavigationActivity.this, NewChallengeActivity.class);
             startActivity(newChallengeIntent);
-        } else if (id == R.id.nav_gallery) {
+            toolbar.setTitle("Challenge Run");
+        } else if (id == R.id.nav_friends) {
             Intent friendsIntent = new Intent(SenseNavigationActivity.this, FriendsActivity.class);
             startActivity(friendsIntent);
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_add_friend) {
             Intent newFriendIntent = new Intent(SenseNavigationActivity.this, AddFriendActivity.class);
             startActivity(newFriendIntent);
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_leaderboard) {
             Intent leaderBoardIntent = new Intent(SenseNavigationActivity.this, LeaderbordActivity.class);
             startActivity(leaderBoardIntent);
             changeMainView(R.layout.activity_leaderbord);
+        } else if (id == R.id.nav_challenges) {
+            Intent myChallengesIntent = new Intent(SenseNavigationActivity.this, CompletedChallengesActivity.class);
+            startActivity(myChallengesIntent);
+            changeMainView(R.layout.activity_completed_challenges);
         }
 
         closeTheDrawer();
@@ -107,4 +113,5 @@ public class SenseNavigationActivity extends AppCompatActivity
         View view = li.inflate(layout, null, false);
         viewGroup.addView(view);
     }
+
 }

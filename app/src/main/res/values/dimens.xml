@@ -3,4 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="ic_clear_margin">56dp</dimen>
+    <dimen name="margin_extra_small" />
+    <dimen name="margin_small" />
+    <dimen name="font_size_small" />
+    <dimen name="font_size_medium" />
 </resources>

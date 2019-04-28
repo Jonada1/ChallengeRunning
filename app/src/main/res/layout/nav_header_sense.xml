@@ -19,13 +19,16 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/icons8_exercise_filled_50" />
+        android:tint="@android:color/white"
+        app:srcCompat="@drawable/baseline_account_circle_white_36" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="Jonada Ferracaku"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>
