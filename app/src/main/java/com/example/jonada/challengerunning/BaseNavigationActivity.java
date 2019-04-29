@@ -2,9 +2,7 @@ package com.example.jonada.challengerunning;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,11 +12,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.LinearLayout;
 
-public class SenseNavigationActivity extends AppCompatActivity
+public class BaseNavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Toolbar toolbar;
     private int currentChosenNavMenu = 0;
@@ -79,21 +75,21 @@ public class SenseNavigationActivity extends AppCompatActivity
             closeTheDrawer();
         }
         if (id == R.id.nav_start_challenge) {
-            Intent newChallengeIntent = new Intent(SenseNavigationActivity.this, NewChallengeActivity.class);
+            Intent newChallengeIntent = new Intent(BaseNavigationActivity.this, NewChallengeActivity.class);
             startActivity(newChallengeIntent);
             toolbar.setTitle("Challenge Run");
         } else if (id == R.id.nav_friends) {
-            Intent friendsIntent = new Intent(SenseNavigationActivity.this, FriendsActivity.class);
+            Intent friendsIntent = new Intent(BaseNavigationActivity.this, FriendsActivity.class);
             startActivity(friendsIntent);
         } else if (id == R.id.nav_add_friend) {
-            Intent newFriendIntent = new Intent(SenseNavigationActivity.this, AddFriendActivity.class);
+            Intent newFriendIntent = new Intent(BaseNavigationActivity.this, AddFriendActivity.class);
             startActivity(newFriendIntent);
         } else if (id == R.id.nav_leaderboard) {
-            Intent leaderBoardIntent = new Intent(SenseNavigationActivity.this, LeaderbordActivity.class);
+            Intent leaderBoardIntent = new Intent(BaseNavigationActivity.this, LeaderbordActivity.class);
             startActivity(leaderBoardIntent);
             changeMainView(R.layout.activity_leaderbord);
         } else if (id == R.id.nav_challenges) {
-            Intent myChallengesIntent = new Intent(SenseNavigationActivity.this, CompletedChallengesActivity.class);
+            Intent myChallengesIntent = new Intent(BaseNavigationActivity.this, CompletedChallengesActivity.class);
             startActivity(myChallengesIntent);
             changeMainView(R.layout.activity_completed_challenges);
         }

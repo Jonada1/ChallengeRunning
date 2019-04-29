@@ -22,8 +22,8 @@ public final class StaticMemoryDatabase {
                 ),
                 new ChallengeData(
                         3,
-                        new Challenger(4, "Cimi", 0.0, false),
-                        new Challenger(3, "Nijar", 1.9, true)
+                        new Challenger(4, "Nijar", 0.0, true),
+                        new Challenger(3, "Jonada", 1.9, true)
                 )
         ));
         Challengers = new ArrayList(Arrays.asList());

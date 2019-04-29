@@ -10,16 +10,10 @@ import android.location.LocationManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.util.AttributeSet;
-import android.view.InflateException;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -30,7 +24,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class HomeActivity extends SenseNavigationActivity implements OnMapReadyCallback {
+public class HomeActivity extends BaseNavigationActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     LocationManager locationManager;
     LocationListener locationListener;
