@@ -123,7 +123,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/steps"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -131,6 +130,7 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
                     <TextView
+                        android:id="@+id/steps"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal|center_vertical"
@@ -185,6 +185,7 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
                     <TextView
+                        android:id="@+id/distance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal|center_vertical"
@@ -226,6 +227,7 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
                     <TextView
+                        android:id="@+id/speed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal|center_vertical"
