@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jonada.challengerunning.LocalDB.StaticMemoryDatabase;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -29,6 +30,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -38,9 +40,11 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
     private GoogleMap mMap;
     LocationManager locationManager;
     LocationListener locationListener;
+    private boolean isInitiator;
 
     private int timePassed;
     private boolean timerPaused;
+    private int challengeId;
     final Timer timer = new Timer();
     int totalDuration;
     Button bt_pause;
@@ -80,17 +84,21 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
     protected void onCreate(Bundle savedInstanceState) {
         timePassed = 55;
         timerPaused = false;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_run_session);
+        Bundle extras = getIntent().getExtras();
 
-            bt_pause = (Button) findViewById(R.id.bt_pause);
-            bt_play = (Button) findViewById(R.id.bt_play);
-            bt_finish = (Button) findViewById(R.id.btn_finish);
-            bt_stop = (Button) findViewById(R.id.btn_stop);
-            bt_pause.setVisibility(View.VISIBLE);
-            bt_play.setVisibility(View.GONE);
-            bt_finish.setVisibility(View.GONE);
+        challengeId = (int)extras.get("challengeId");
+        totalDuration = (int) extras.get("time");
+        isInitiator = (boolean)extras.get("isInitiator");
+
+        bt_pause = (Button) findViewById(R.id.bt_pause);
+        bt_play = (Button) findViewById(R.id.bt_play);
+        bt_finish = (Button) findViewById(R.id.btn_finish);
+        bt_stop = (Button) findViewById(R.id.btn_stop);
+        bt_pause.setVisibility(View.VISIBLE);
+        bt_play.setVisibility(View.GONE);
+        bt_finish.setVisibility(View.GONE);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -112,8 +120,7 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
             isSensorPresent = false;
         }
 
-        Bundle extras = getIntent().getExtras();
-        totalDuration = extras != null ? (int) extras.get("time"): 0;
+
         final TextView duration = (TextView) findViewById(R.id.textView_timer);
         final Handler handler = new Handler();
         timer.scheduleAtFixedRate(new TimerTask(){
@@ -147,6 +154,13 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
     }
 
     public  void onFinish(View view){
+        for(ChallengeData challenge : StaticMemoryDatabase.Challenges) {
+            if(challenge.getId() == challengeId) {
+                Challenger challenger = isInitiator ? challenge.getInitiator() : challenge.getReceiver();
+                Random random = new Random();
+                challenger.setDistance((double) (random.nextInt(10 + 1) + 1));
+            }
+        }
         Intent NewChallengeIntent = new Intent(RunSessionActivity.this, CompletedChallengesActivity.class);
         startActivity(NewChallengeIntent);
     }

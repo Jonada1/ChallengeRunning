@@ -1,11 +1,10 @@
 package com.example.jonada.challengerunning;
 
 public class ChallengeData {
-    public ChallengeData(int id, Challenger initiator, Challenger receiver, boolean finished) {
+    public ChallengeData(int id, Challenger initiator, Challenger receiver) {
         this.id = id;
         this.initiator = initiator;
         this.receiver = receiver;
-        this.finished = finished;
     }
 
     public Challenger getInitiator() {
@@ -24,14 +23,6 @@ public class ChallengeData {
         this.receiver = receiver;
     }
 
-    public boolean isFinished() {
-        return finished;
-    }
-
-    public void setFinished(boolean finished) {
-        this.finished = finished;
-    }
-
     public int getId() {
         return id;
     }
@@ -43,5 +34,4 @@ public class ChallengeData {
     private int id;
     private Challenger initiator;
     private Challenger receiver;
-    private boolean finished;
 }

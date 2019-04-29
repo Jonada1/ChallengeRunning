@@ -22,6 +22,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
+        android:layout_marginTop="60dp"
         android:orientation="horizontal"
         android:id="@+id/content_view"
         android:layout_width="match_parent"

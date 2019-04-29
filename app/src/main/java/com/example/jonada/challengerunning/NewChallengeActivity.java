@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -11,6 +12,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.jonada.challengerunning.LocalDB.StaticMemoryDatabase;
+
+import java.util.Random;
 
 public class NewChallengeActivity extends SenseNavigationActivity {
     @Override
@@ -28,11 +33,30 @@ public class NewChallengeActivity extends SenseNavigationActivity {
         spinner.setAdapter(adapter);
     }
 
-
     public void startChallenge(View view) {
+        String friend = getSelectedFriend();
         EditText durationTime = (EditText) findViewById(R.id.editText_duration);
         Intent runningSessionIntent = new Intent(this, RunSessionActivity.class );
+        Random r = new Random();
+        int challengeId = r.nextInt((99999999 - 1) + 1) + 1;
+        ChallengeData newChallenge = new ChallengeData(
+                challengeId,
+                new Challenger(1, "Jonada"),
+                new Challenger(2, friend)
+        );
+        StaticMemoryDatabase.Challenges.add(newChallenge);
+
         runningSessionIntent.putExtra("time", Integer.parseInt(durationTime.getText().toString()) * 60);
+        runningSessionIntent.putExtra("challengeId", challengeId);
+        runningSessionIntent.putExtra("isInitiator", true);
+
         startActivity(runningSessionIntent);
+    }
+
+    private String getSelectedFriend() {
+
+        Spinner friendSpinner = (Spinner)findViewById(R.id.spinner);
+        String text = friendSpinner.getSelectedItem().toString();
+        return text;
     }
 }

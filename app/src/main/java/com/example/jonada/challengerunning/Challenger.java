@@ -1,10 +1,20 @@
 package com.example.jonada.challengerunning;
 
+import java.util.Random;
+
 public class Challenger {
-    public Challenger(int id, String name, Double distance) {
+    public Challenger(int id, String name, Double distance, boolean finished) {
         this.id = id;
         this.name = name;
         this.distance = distance;
+        this.finished = finished;
+    }
+
+    public Challenger(int id, String name) {
+        this.id = id;
+        this.name = name;
+        this.distance = (double)0;
+        this.finished = false;
     }
 
     public int getId() {
@@ -34,4 +44,13 @@ public class Challenger {
     private int id;
     private String name;
     private Double distance;
+    private boolean finished;
+
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
+    }
 }
