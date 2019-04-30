@@ -27,7 +27,7 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Jonada Ferracaku"
+        android:text="Alex"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/white" />
 

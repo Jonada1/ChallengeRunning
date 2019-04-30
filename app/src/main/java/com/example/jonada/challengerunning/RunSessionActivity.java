@@ -237,17 +237,9 @@ public class RunSessionActivity extends FragmentActivity implements SensorEventL
     @Override
     protected void onResume(){
         super.onResume();
-//        running = true;
-////        Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-////        if(countSensor != null){
-////            sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
-////        } else {
-////            Toast.makeText(this, "Sensor not found", Toast.LENGTH_SHORT).show();
-////        }
 
         if(isSensorPresent)
         {
-            Toast.makeText(this, "Sensor found", Toast.LENGTH_SHORT).show();
             sensorManager.registerListener(this, mSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
         }

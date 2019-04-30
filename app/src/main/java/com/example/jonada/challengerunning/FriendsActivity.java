@@ -12,12 +12,13 @@ public class FriendsActivity extends BaseNavigationActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        changeMainView(R.layout.activity_friends);
+        changeMainView(R.layout.activity_friends, "My Friends");
 
         FriendData[] myListData = new FriendData[] {
-                new FriendData("Jonada Ferracaku", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),
-                new FriendData("Nejdi Kroi", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),
-                new FriendData("Mobile Computing", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),
+                new FriendData("Jonada", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),
+                new FriendData("Nejdi", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),
+                new FriendData("Ornela", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),
+                new FriendData("Nijar", R.drawable.baseline_account_circle_black_24dp, android.R.drawable.ic_delete),
         };
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.friends_view);
@@ -26,7 +27,7 @@ public class FriendsActivity extends BaseNavigationActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
-        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.text_view_add_friend);
+        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab_add_friend);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -33,7 +33,7 @@ public class HomeActivity extends BaseNavigationActivity implements OnMapReadyCa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        changeMainView(R.layout.activity_home);
+        changeMainView(R.layout.activity_home, "Challenge Running");
         this.createMap();
         Button fab = (Button)findViewById(R.id.button_start_challenge);
         fab.setOnClickListener(new View.OnClickListener() {

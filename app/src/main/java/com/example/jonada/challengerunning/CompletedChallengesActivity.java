@@ -15,7 +15,7 @@ public class CompletedChallengesActivity extends BaseNavigationActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        changeMainView(R.layout.activity_completed_challenges);
+        changeMainView(R.layout.activity_completed_challenges, "My Completed Challenges");
 
         List<ChallengeData> inProgressChallenges = new ArrayList(Arrays.asList());
         List<ChallengeData> completedChallenges = new ArrayList(Arrays.asList());

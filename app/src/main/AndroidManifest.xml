@@ -35,22 +35,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeActivity"
-            android:label="Challenge Running" />
+            android:name=".HomeActivity" />
         <activity
-            android:name=".NewChallengeActivity"
-            android:label="New Challenge" />
+            android:name=".NewChallengeActivity" />
         <activity
             android:name=".AddFriendActivity"
+            android:theme="@style/AppTheme.AppBarOverlay"
             android:label="Add Friend" />
         <activity
-            android:name=".FriendsActivity"
-            android:label="My Friends" />
+            android:name=".FriendsActivity" />
         <activity
-            android:name=".LeaderbordActivity"
-            android:label="Leaderboard" />
+            android:name=".LeaderbordActivity" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".RunSessionActivity" />
+        <activity android:name=".RunSessionActivity"
+            android:theme="@style/AppTheme.PopupOverlay"
+            android:label="Run session"/>
     </application>
 
 </manifest>

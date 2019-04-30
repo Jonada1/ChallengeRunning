@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.jonada.challengerunning.LocalDB.StaticMemoryDatabase;
 
@@ -15,7 +16,7 @@ public class NewChallengeActivity extends BaseNavigationActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        changeMainView(R.layout.activity_new_challenge);
+        changeMainView(R.layout.activity_new_challenge, "New Challenge");
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
@@ -35,7 +36,7 @@ public class NewChallengeActivity extends BaseNavigationActivity {
         int challengeId = r.nextInt((99999999 - 1) + 1) + 1;
         ChallengeData newChallenge = new ChallengeData(
                 challengeId,
-                new Challenger(1, "Jonada"),
+                new Challenger(1, "Jane"),
                 new Challenger(2, friend)
         );
         StaticMemoryDatabase.Challenges.add(newChallenge);
@@ -43,7 +44,7 @@ public class NewChallengeActivity extends BaseNavigationActivity {
         runningSessionIntent.putExtra("time", Integer.parseInt(durationTime.getText().toString()) * 60);
         runningSessionIntent.putExtra("challengeId", challengeId);
         runningSessionIntent.putExtra("isInitiator", true);
-
+        Toast.makeText(this, "Notification sent", Toast.LENGTH_SHORT).show();
         startActivity(runningSessionIntent);
     }
 

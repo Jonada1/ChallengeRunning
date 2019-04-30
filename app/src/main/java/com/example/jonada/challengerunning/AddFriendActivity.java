@@ -1,23 +1,24 @@
 package com.example.jonada.challengerunning;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
-public class AddFriendActivity extends BaseNavigationActivity {
+public class AddFriendActivity extends AppCompatActivity {
 
     private static final String[] friends = new String[]{
-            "Nejdi", "Jonada", "Ornela", "Friend", "Someone"
+            "Nejdi", "Jonada", "Ornela", "Alex", "Jane", "Nijar"
     };
     AutoCompleteTextView friendsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        changeMainView(R.layout.activity_add_friend);
+        setContentView(R.layout.activity_add_friend);
 
         String[] countries = getResources().getStringArray(R.array.friends);
 

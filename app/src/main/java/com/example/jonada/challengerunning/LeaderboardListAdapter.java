@@ -32,7 +32,7 @@ public class LeaderboardListAdapter extends RecyclerView.Adapter<LeaderboardList
 
         holder.profile_photo.setImageResource(lDlistdata[position].getImgId());
         holder.name.setText(lDlistdata[position].getName());
-        holder.total_distance.setText(lDlistdata[position].getDistance());
+        holder.totalDistance.setText(lDlistdata[position].getDistance());
         holder.place.setImageResource(lDlistdata[position].getImg());
     }
 
@@ -45,15 +45,15 @@ public class LeaderboardListAdapter extends RecyclerView.Adapter<LeaderboardList
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView profile_photo;
         public TextView name;
-        public  TextView total_distance;
+        public  TextView totalDistance;
         public ImageView place;
         public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
             this.profile_photo = (ImageView) itemView.findViewById(R.id.profile_picture);
             this.name = (TextView) itemView.findViewById(R.id.textView_name);
-            this.name = (TextView) itemView.findViewById(R.id.total_distance);
-            this.profile_photo = (ImageView) itemView.findViewById(R.id.place);
+            this.totalDistance = (TextView) itemView.findViewById(R.id.total_distance);
+            this.place = (ImageView) itemView.findViewById(R.id.place);
 
             relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relative_layout);
         }

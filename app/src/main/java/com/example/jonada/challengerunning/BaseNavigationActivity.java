@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class BaseNavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -74,6 +75,11 @@ public class BaseNavigationActivity extends AppCompatActivity
         if (id != this.currentChosenNavMenu) {
             closeTheDrawer();
         }
+        if (id == R.id.nav_homepage) {
+            Intent newChallengeIntent = new Intent(BaseNavigationActivity.this, HomeActivity.class);
+            startActivity(newChallengeIntent);
+            toolbar.setTitle("Challenge Run");
+        }
         if (id == R.id.nav_start_challenge) {
             Intent newChallengeIntent = new Intent(BaseNavigationActivity.this, NewChallengeActivity.class);
             startActivity(newChallengeIntent);
@@ -108,6 +114,11 @@ public class BaseNavigationActivity extends AppCompatActivity
         viewGroup.removeAllViews();
         View view = li.inflate(layout, null, false);
         viewGroup.addView(view);
+    }
+    public void changeMainView(int layout,String title){
+        changeMainView(layout);
+        TextView titleView = (TextView)findViewById(R.id.toolbar_title);
+        titleView.setText(title);
     }
 
 }
